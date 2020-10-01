@@ -24,5 +24,37 @@ module.exports = {
         const usuarios = await connection('usuario').select('*');
     
         return response.json(usuarios);
+    },
+
+    async alterar(request, response) {
+        const idusuario = request.headers.usuario;
+        const { nome, email, senha, whatsapp, cidade, uf} = request.body;
+
+        // console.log(idusuario);
+        const existe = await connection('usuario')
+            .where('id', idusuario)
+            .select('id')
+            .first
+
+        if (idusuario == null){
+            return response.status(401).json({ error: 'Operação não permitida.' });
+        }
+        else if (existe.id == null){
+            return response.status(401).json({ error: 'Operação não permitida.' });
+        }
+        else {
+            await connection('usuario')
+            .where('id', idusuario)
+            .update({
+                'nome':nome,
+                'email':email,
+                'senha':senha,
+                'whatsapp':whatsapp,
+                'cidade':cidade,
+                'uf':uf
+            })
+            return response.status(200).send();
+        }
+        
     }
 }
