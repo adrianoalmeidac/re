@@ -1,0 +1,25 @@
+.buscar {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-content: center;
+    margin-top: 40px;
+    margin-left: 25%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 30px;
+}
+.buscar input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: none;
+    background: none;
+    font: 400 18px Roboto, sans-serif;
+}
+
+.buscar button {
+    border: none;
+    background: none;
+    padding: 10px;
+}

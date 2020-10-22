@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi'
+import { FiTrash2 } from 'react-icons/fi'
 import api from '../../services/api';
 
 import './perfil.css';
 
-import logoImg from '../../assets/logo.svg';
 import { useState } from 'react';
+import Header from '../../Header';
 
 export default function Perfil(){
     const [livros, setLivros] = useState([]);
-    const nome = localStorage.getItem('nome');
     const usuarioid = localStorage.getItem('id');
-    const history = useHistory();
 
     useEffect(()=> {
         api.get('busca', {
@@ -38,22 +36,9 @@ export default function Perfil(){
         }
     }
 
-    function handleLogout(){
-        localStorage.clear();
-        history.push('/');
-    }
-
     return (
         <div className="perfil-container">
-            <header>
-                <img src={logoImg} alt="Logo" />
-                <span>Bem vindo, {nome}</span>
-                
-                <Link className="button" to="/livro">Cadastrar Livro</Link>
-                <button onClick={()=> handleLogout()} type="button">
-                    <FiPower size={18} color="#0e7be8"/>
-                </button>
-            </header>
+            <Header></Header>
             <h1>Seus livros compartilhados:</h1>
             
             <ul>

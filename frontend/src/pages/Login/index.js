@@ -21,7 +21,7 @@ export default function Login(){
 
             localStorage.setItem('id', retorno.data.id);
             localStorage.setItem('nome', retorno.data.nome)
-            history.push('/perfil');
+            history.push('/home');
         }catch(err){
             alert('Usuario ou senha invalidos.')
         }
