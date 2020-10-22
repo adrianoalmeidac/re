@@ -1,7 +1,6 @@
 const connection = require('../database/connection');
 
 module.exports = {
-
     async busca(request, response){
         const usuarioid = request.headers.usuario;
 
