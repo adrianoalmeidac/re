@@ -12,11 +12,14 @@ export default function Home(){
     const usuarioid = localStorage.getItem('id');
 
     return(
-        <div className="perfil-container">
+        
+        <div>
             <Header></Header>
             <div className="buscar">
             <input type="text" placeholder="Buscar..."></input><button><FiSearch size={18} color="#0e7be8"/></button>
             </div>
+
+            <div className="livros-container">
             <h1>Livros Encontrados:</h1>
             
             <ul>
@@ -44,6 +47,7 @@ export default function Home(){
                     </button>
                 </li>
             </ul>
+            </div>
         </div>
     );
 }

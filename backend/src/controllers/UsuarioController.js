@@ -21,21 +21,25 @@ module.exports = {
     },
 
     async listar(request, response) {
-        const usuarios = await connection('usuario').select('*');
+        const idusuario = request.headers.usuario;
+        const usuarios = await connection('usuario')
+        .where('id', idusuario)
+        .select('*');
     
         return response.json(usuarios);
     },
 
     async alterar(request, response) {
         const idusuario = request.headers.usuario;
+        
         const { nome, email, senha, whatsapp, cidade, uf} = request.body;
 
         // console.log(idusuario);
         const existe = await connection('usuario')
             .where('id', idusuario)
             .select('id')
-            .first
-
+            .first();
+   
         if (idusuario == null){
             return response.status(401).json({ error: 'Operação não permitida.' });
         }
@@ -43,6 +47,7 @@ module.exports = {
             return response.status(401).json({ error: 'Operação não permitida.' });
         }
         else {
+            
             await connection('usuario')
             .where('id', idusuario)
             .update({

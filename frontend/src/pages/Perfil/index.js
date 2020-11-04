@@ -37,8 +37,9 @@ export default function Perfil(){
     }
 
     return (
-        <div className="perfil-container">
+        <div>
             <Header></Header>
+            <div className="perfil-container">
             <h1>Seus livros compartilhados:</h1>
             
             <ul>
@@ -58,6 +59,7 @@ export default function Perfil(){
                 </li>
                 ))}
             </ul>
+            </div>
         </div>
     );
 }
