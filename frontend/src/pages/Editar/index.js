@@ -31,8 +31,8 @@ export default function Editar(){
         })
     }, [usuarioid]);
 
-    async function handleAlterar(){
-
+    async function handleAlterar(e){
+        e.preventDefault();
         const data= {
             nome,
             email,
@@ -48,25 +48,29 @@ export default function Editar(){
                 }
             });
             alert('Cadastro Alterado!');
-            history.push('/editar');
+            localStorage.clear();
+            history.push('/');
         } catch (err) {
             alert('Erro no cadastro, tente novamente.');
         }
     }
 
     return(
-        <div>
+        <div className="editar-container">
             <Header></Header>
-            <div className="editar-container">
+            <div className="content">
+            <h1>Editar Perfil</h1>
             <form onSubmit={handleAlterar}>
                 {usuario.map(usuario =>([
-                <input placeholder="Nome" value={usuario.nome} onChange={e => setNome(e.target.value)} required />,
-                <input type="password" placeholder="Senha" value={usuario.senha} onChange={ e => setSenha(e.target.value)} required />,
-                <input placeholder="Whatsapp" value={usuario.whatsapp} onChange={ e => setWhatsapp(e.target.value)} required />,
-                <input placeholder="Cidade" value={usuario.cidade} onChange={ e => setCidade(e.target.value)} required />,
-                <input placeholder="UF" style={{ width: 80 }} value={usuario.uf} onChange={ e => setUf(e.target.value)} required />,
-                
-                <button className="button" onClick={() => handleAlterar()} type="button">Alterar</button>
+                <input placeholder={usuario.nome} value={nome} onChange={e => setNome(e.target.value)} required />,
+                <input type="email" placeholder={usuario.email} value={email} onChange={ e => setEmail(e.target.value)} required />,
+                <input type="password" placeholder="Digite a nova senha"value={senha} onChange={ e => setSenha(e.target.value)} required />,
+                <input placeholder={usuario.whatsapp} value={whatsapp} onChange={ e => setWhatsapp(e.target.value)} required />,
+                <div className="input-group">
+                    <input placeholder={usuario.cidade} value={cidade} onChange={ e => setCidade(e.target.value)} required />
+                    <input style={{ width: 80 }} placeholder={usuario.uf} value={uf} onChange={ e => setUf(e.target.value)} required />
+                </div>,
+                <button className="button" type="submit">Alterar</button>
                 ]))}
             </form>
             </div>
