@@ -1,4 +1,3 @@
-
 exports.up = function(knex) {
   return knex.schema.createTable('livro', function(table) {
         table.increments();

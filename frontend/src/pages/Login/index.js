@@ -45,7 +45,7 @@ export default function Login(){
                     </Link>
                 </form>
             </section>
-            <img src={heroesImg} alt="Heroes" />
+            <img class="livro" src={heroesImg} alt="Heroes" />
         </div>
     );
 }

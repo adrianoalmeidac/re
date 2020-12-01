@@ -15,6 +15,7 @@ module.exports = {
         });
 
         return response.json({ resultado });
+        return response.status(200);
     },
 
     async listar(request, response) {

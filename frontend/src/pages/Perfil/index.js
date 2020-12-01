@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiTrash2 } from 'react-icons/fi'
 import api from '../../services/api';
-
 import './perfil.css';
-
 import { useState } from 'react';
 import Header from '../../Header';
 
@@ -21,7 +19,6 @@ export default function Perfil(){
             setLivros(retorno.data);
         })
     }, [usuarioid]);
-
     async function handleDeleteLivro(livroid) {
         try {
             await api.delete(`livro/${livroid}`,{
@@ -35,13 +32,11 @@ export default function Perfil(){
             alert('Erro ao deletar!');
         }
     }
-
     return (
         <div>
             <Header></Header>
             <div className="perfil-container">
-            <h1>Seus livros compartilhados:</h1>
-            
+            <h1>Seus livros compartilhados:</h1>          
             <ul>
                 {livros.map(livro => (
                     <li key={livro.id}>

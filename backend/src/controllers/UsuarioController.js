@@ -59,7 +59,6 @@ module.exports = {
                 'uf':uf
             })
             return response.status(200).send();
-        }
-        
+        }        
     }
 }

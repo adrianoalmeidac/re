@@ -43,7 +43,7 @@ export default function Livro(){
                 <img src={logoImg} alt="logo" />
 
                 <h1>Compartilhe!</h1>
-                <p>Registre o seu livro e compartilhe experiencia de leitura com outros leitores.</p>
+                <p>Registre o seu livro e compartilhe a sua experiencia de leitura com outros leitores!</p>
             
                 <Link className="back-link" to="/perfil">
                         <FiArrowLeft size={16} color="#0e7be8" />
