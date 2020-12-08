@@ -167,3 +167,13 @@ form textarea {
     display: flex;
     margin-left: 180px;       
 }
+
+.footer-container {
+    font: 400 18px Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    bottom: 0;
+    position: relative;
+    margin: 20px;
+    width: 90%;
+    text-align: center;
+}

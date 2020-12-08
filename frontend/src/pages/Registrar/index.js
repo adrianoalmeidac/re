@@ -4,6 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 import logoImg from '../../assets/logo.svg';
 import './registrar.css';
+import Footer from '../../Footer';
 
 export default function Registrar(){
     const [nome, setNome] = useState('');
@@ -58,6 +59,7 @@ export default function Registrar(){
                 <button className="button" type="submit">Cadastrar</button>
             </form>
         </div>
+        
     </div>
     );
 }

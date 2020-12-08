@@ -5,11 +5,12 @@ import api from '../../services/api';
 import './perfil.css';
 import { useState } from 'react';
 import Header from '../../Header';
+import Footer from '../../Footer';
 
 export default function Perfil(){
     const [livros, setLivros] = useState([]);
     const usuarioid = localStorage.getItem('id');
-
+    localStorage.removeItem('buscar');
     useEffect(()=> {
         api.get('busca', {
             headers: {
@@ -19,6 +20,7 @@ export default function Perfil(){
             setLivros(retorno.data);
         })
     }, [usuarioid]);
+    
     async function handleDeleteLivro(livroid) {
         try {
             await api.delete(`livro/${livroid}`,{
@@ -55,6 +57,7 @@ export default function Perfil(){
                 ))}
             </ul>
             </div>
+            <Footer></Footer>
         </div>
     );
 }

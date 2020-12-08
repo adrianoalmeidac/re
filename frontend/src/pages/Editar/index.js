@@ -5,6 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import logoImg from '../../assets/logo.svg'
 import api from '../../services/api';
 import Header from '../../Header';
+import Footer from '../../Footer';
 
 import './editar.css';
 import Livro from '../Livro';
@@ -17,6 +18,7 @@ export default function Editar(){
     const [whatsapp, setWhatsapp] = useState('');
     const [cidade, setCidade] = useState('');
     const [uf, setUf] = useState('');
+    localStorage.removeItem('buscar');
 
     const history = useHistory();
     const [usuario, setUsuario] = useState([]);
@@ -74,6 +76,7 @@ export default function Editar(){
                 ]))}
             </form>
             </div>
+            <Footer></Footer>
         </div>
     );
 }

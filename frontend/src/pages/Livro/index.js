@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import logoImg from '../../assets/logo.svg'
 import api from '../../services/api';
+import Footer from '../../Footer';
 
 import './livro.css';
 
@@ -13,6 +14,7 @@ export default function Livro(){
     const [descricao, setDescricao] = useState('');
     const [livrosatrocar, setLivrosatrocar] = useState('');
     const history = useHistory();
+    localStorage.removeItem('buscar');
 
     async function handleNovoLivro(e){
         e.preventDefault();
@@ -77,6 +79,7 @@ export default function Livro(){
             </form>
 
         </div>
+        
     </div>
     );
 }

@@ -26,6 +26,7 @@
 
 .livros-container {
     width: 100%;
+    min-height: 430px;
     max-width: 1180px;
     padding: 0 30px;
     margin: 32px auto;
@@ -45,7 +46,7 @@
     height: 64px;
 }
 
-.livros-container header button {
+.livros-container header a {
     height: 60px;
     width: 60px;
     border-radius: 4px;
@@ -55,13 +56,13 @@
     transition: border-color 0.2s;
 }
 
-.livros-container header button:hover {
+.livros-container header a:hover {
     border-color: #999;
 }
 
 
 .livros-container h1 {
-    margin-top: 80px;
+    margin-top: 30px;
     margin-bottom: 24px;
 }
 
@@ -79,14 +80,14 @@
     position: relative;
 }
 
-.livros-container ul li button {
+.livros-container ul li a {
     position: absolute;
     right: 24px;
     top: 24px;
     border: 0;
 }
 
-.livros-container ul li button:hover {
+.livros-container ul li a:hover {
     opacity: 0.8;
 }
 

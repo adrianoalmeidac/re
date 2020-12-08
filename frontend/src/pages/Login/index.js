@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
+import Footer from '../../Footer';
 
 import './login.css';
 
@@ -46,6 +47,7 @@ export default function Login(){
                 </form>
             </section>
             <img class="livro" src={heroesImg} alt="Heroes" />
+            
         </div>
     );
 }
