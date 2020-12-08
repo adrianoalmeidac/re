@@ -66,7 +66,7 @@ export default function Home(){
                     <strong>Cidade:</strong>
                     <p>{livro.cidade}</p>
                     <strong>Estado:</strong>
-                    <p>{livro.cidade}</p>
+                    <p>{livro.estado}</p>
                     <a href={'https://wa.me/55' + livro.whatsapp } type="button" target="_blank">
                         <FaWhatsapp size={20} color="#0e7be8" />
                     </a>
